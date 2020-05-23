@@ -10,7 +10,7 @@ let cardsReviewedQuery = {
         "query": "rated:1"
     }
 };
-axios.post("http://localhost:8765/", cardsReviewedQuery)
+axios.post("http://192.168.1.8:8765/", cardsReviewedQuery)
 	.then(x => {
 		console.log(x);
 		let detailOfCardsReviewed = {
@@ -20,7 +20,7 @@ axios.post("http://localhost:8765/", cardsReviewedQuery)
 				"notes": x.data.result
 			}
 		};
-		axios.post("http://localhost:8765", detailOfCardsReviewed)
+		axios.post("http://192.168.1.8:8765", detailOfCardsReviewed)
 			.then(x => {
 				console.log(x);
 				x.data.result.forEach(x => trends.push(x.fields.Hanzi.value));
