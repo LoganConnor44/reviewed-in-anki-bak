@@ -20,11 +20,19 @@ axios.post("/api", cardsReviewedQuery)
 			}
 		};
 		axios.post("/api", detailOfCardsReviewed)
-			.then(x => {
+			.then(y => {
 				if (trends.includes('Loading...')) {
 					trends = [];
 				}
-				x.data.result.forEach(x => trends.push(x.fields.Hanzi.value));
+				y.data.result.forEach(z => {
+					console.log(z);
+					if (typeof z.fields.Hanzi !== 'undefined') {
+						trends.push(z.fields.Hanzi.value);
+					}
+					if (typeof z.fields['Simplified Hanzi'] !== 'undefined') {
+						trends.push(z.fields['Simplified Hanzi'].value);
+					}
+				});
 		});
 });
 
