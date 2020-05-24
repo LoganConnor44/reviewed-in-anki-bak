@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import axios from 'axios';
 
-let trends = [];
+let trends = ['Loading...'];
 let cardsReviewedQuery = {
     "action": "findNotes",
     "version": 6,
@@ -10,9 +10,8 @@ let cardsReviewedQuery = {
         "query": "rated:1"
     }
 };
-axios.post("http://0.0.0.0:8765/", cardsReviewedQuery)
+axios.post("/api", cardsReviewedQuery)
 	.then(x => {
-		console.log(x);
 		let detailOfCardsReviewed = {
 			"action": "notesInfo",
 			"version": 6,
@@ -20,9 +19,11 @@ axios.post("http://0.0.0.0:8765/", cardsReviewedQuery)
 				"notes": x.data.result
 			}
 		};
-		axios.post("http://0.0.0.0:8765", detailOfCardsReviewed)
+		axios.post("/api", detailOfCardsReviewed)
 			.then(x => {
-				console.log(x);
+				if (trends.includes('Loading...')) {
+					trends = [];
+				}
 				x.data.result.forEach(x => trends.push(x.fields.Hanzi.value));
 		});
 });
