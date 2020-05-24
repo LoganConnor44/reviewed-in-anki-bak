@@ -3,15 +3,17 @@ import './App.css';
 import axios from 'axios';
 
 let trends = ['Loading...'];
+var previousFiveTrends = [];
 let cardsReviewedQuery = {
     "action": "findNotes",
     "version": 6,
     "params": {
-        "query": "rated:1"
+        "query": "rated:2"
     }
 };
-axios.post("/api", cardsReviewedQuery)
+axios.post('api', cardsReviewedQuery)
 	.then(x => {
+		console.log('Request successful. Iterating through returned data for details.');
 		let detailOfCardsReviewed = {
 			"action": "notesInfo",
 			"version": 6,
@@ -19,22 +21,31 @@ axios.post("/api", cardsReviewedQuery)
 				"notes": x.data.result
 			}
 		};
-		axios.post("/api", detailOfCardsReviewed)
+		axios.post('/api', detailOfCardsReviewed)
 			.then(y => {
+				console.log('Request successful. Determining which fields to retrieve data from.');
 				if (trends.includes('Loading...')) {
 					trends = [];
 				}
-				y.data.result.forEach(z => {
-					console.log(z);
-					if (typeof z.fields.Hanzi !== 'undefined') {
-						trends.push(z.fields.Hanzi.value);
-					}
-					if (typeof z.fields['Simplified Hanzi'] !== 'undefined') {
-						trends.push(z.fields['Simplified Hanzi'].value);
-					}
-				});
-		});
-});
+				if (typeof y.data.result !== 'undefined') {
+					y.data.result.forEach(z => {
+						if (typeof z.fields.Hanzi !== 'undefined') {
+							trends.push(z.fields.Hanzi.value);
+						}
+						if (typeof z.fields['Simplified Hanzi'] !== 'undefined') {
+							trends.push(z.fields['Simplified Hanzi'].value);
+						}
+					});
+				}
+				if (trends.length === 0) {
+					console.log('No data returned.');
+					trends.push('No cards studied today.');
+					trends.push('Nothing found.');
+					trends.push('Perform a sync if you are expecting results.');
+					trends.push('Looks like you\'ve been lazy.');
+				}
+			});
+	});
 
 var colors = [
 	'#ff3031',
@@ -131,7 +142,21 @@ function Pane(cell) {
 			node.style.backgroundColor = randomizer(colors);
 		while (node.style.backgroundColor === nextNode.style.backgroundColor);
 
-		trend.title = randomizer(trends);
+		var randomTrend = randomizer(trends);
+		
+		if (trends.length > 1) {
+			do {
+				randomTrend = randomizer(trends);			
+			} while (previousFiveTrends.includes(randomTrend))
+			previousFiveTrends.unshift(randomTrend);
+			if (previousFiveTrends.length > 5) {
+				previousFiveTrends.pop();
+			}
+			console.log('Previous Five Trends');
+			console.log(previousFiveTrends);
+		}
+
+		trend.title = randomTrend;
 		trend.href = 'https://www.google.com/search?q=' + trend.title;
 		trend.innerHTML = '';
 
