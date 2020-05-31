@@ -1,6 +1,3 @@
-import React from 'react';
-import './App.css';
-import axios from 'axios';
 
 let trends = ['Loading...'];
 var previousFiveTrends = [];
@@ -55,7 +52,7 @@ var colors = [
 ];
 
 const randomizer = things => things[Math.floor(things.length * Math.random())];
-let container = document.body;
+let container = document.getElementById('asdf');
 
 // slide options
 const slideEase = t => t * t * t;
@@ -226,9 +223,3 @@ const calcFontsize = () => {
 }
 calcFontsize();
 window.onresize = calcFontsize;
-
-const App = () => {
-	return (<div />);
-}
-
-export default App;
