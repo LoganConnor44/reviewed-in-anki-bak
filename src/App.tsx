@@ -25,7 +25,7 @@ const shuffle = (mixMeUp: JSX.Element[]): JSX.Element[] => {
 const App = () => {
 	const indexedDb: ReviewedDb = new ReviewedDb();
 	const [panels, setPanels] = useState<JSX.Element[]>([]);
-	const ankiApiUrl = 'http://192.168.1.4:8765';
+	const ankiApiUrl = 'https://192.168.1.4:8765';
 
 	useEffect(() => {
 		const retrieveDataFromAnkiApi = async (numberOfItemsInIndexedDb: number): Promise<string[]> => {
