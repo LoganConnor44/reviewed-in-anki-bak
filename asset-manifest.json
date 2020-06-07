@@ -1,22 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.6cdd9bab.chunk.css",
-    "main.js": "/static/js/main.7f1e9bf0.chunk.js",
-    "main.js.map": "/static/js/main.7f1e9bf0.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.90a07208.js",
-    "runtime-main.js.map": "/static/js/runtime-main.90a07208.js.map",
-    "static/js/2.fcc3ad80.chunk.js": "/static/js/2.fcc3ad80.chunk.js",
-    "static/js/2.fcc3ad80.chunk.js.map": "/static/js/2.fcc3ad80.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.6665a03af74a2caa25ad1ee7b899e8bc.js": "/precache-manifest.6665a03af74a2caa25ad1ee7b899e8bc.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.6cdd9bab.chunk.css.map": "/static/css/main.6cdd9bab.chunk.css.map",
-    "static/js/2.fcc3ad80.chunk.js.LICENSE.txt": "/static/js/2.fcc3ad80.chunk.js.LICENSE.txt"
+    "main.css": "/reviewed-in-anki/static/css/main.5a47de1c.chunk.css",
+    "main.js": "/reviewed-in-anki/static/js/main.5b6d1b00.chunk.js",
+    "main.js.map": "/reviewed-in-anki/static/js/main.5b6d1b00.chunk.js.map",
+    "runtime-main.js": "/reviewed-in-anki/static/js/runtime-main.7ccfa582.js",
+    "runtime-main.js.map": "/reviewed-in-anki/static/js/runtime-main.7ccfa582.js.map",
+    "static/css/2.dbd8b1e0.chunk.css": "/reviewed-in-anki/static/css/2.dbd8b1e0.chunk.css",
+    "static/js/2.df8f0436.chunk.js": "/reviewed-in-anki/static/js/2.df8f0436.chunk.js",
+    "static/js/2.df8f0436.chunk.js.map": "/reviewed-in-anki/static/js/2.df8f0436.chunk.js.map",
+    "index.html": "/reviewed-in-anki/index.html",
+    "precache-manifest.559058abc7f14b74e791a517d4444eea.js": "/reviewed-in-anki/precache-manifest.559058abc7f14b74e791a517d4444eea.js",
+    "service-worker.js": "/reviewed-in-anki/service-worker.js",
+    "static/css/2.dbd8b1e0.chunk.css.map": "/reviewed-in-anki/static/css/2.dbd8b1e0.chunk.css.map",
+    "static/css/main.5a47de1c.chunk.css.map": "/reviewed-in-anki/static/css/main.5a47de1c.chunk.css.map",
+    "static/js/2.df8f0436.chunk.js.LICENSE.txt": "/reviewed-in-anki/static/js/2.df8f0436.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.90a07208.js",
-    "static/js/2.fcc3ad80.chunk.js",
-    "static/css/main.6cdd9bab.chunk.css",
-    "static/js/main.7f1e9bf0.chunk.js"
+    "static/js/runtime-main.7ccfa582.js",
+    "static/css/2.dbd8b1e0.chunk.css",
+    "static/js/2.df8f0436.chunk.js",
+    "static/css/main.5a47de1c.chunk.css",
+    "static/js/main.5b6d1b00.chunk.js"
   ]
 }
