@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/reviewed-in-anki/static/css/main.5a47de1c.chunk.css",
-    "main.js": "/reviewed-in-anki/static/js/main.049bdb8b.chunk.js",
-    "main.js.map": "/reviewed-in-anki/static/js/main.049bdb8b.chunk.js.map",
+    "main.js": "/reviewed-in-anki/static/js/main.759f8682.chunk.js",
+    "main.js.map": "/reviewed-in-anki/static/js/main.759f8682.chunk.js.map",
     "runtime-main.js": "/reviewed-in-anki/static/js/runtime-main.7ccfa582.js",
     "runtime-main.js.map": "/reviewed-in-anki/static/js/runtime-main.7ccfa582.js.map",
     "static/css/2.dbd8b1e0.chunk.css": "/reviewed-in-anki/static/css/2.dbd8b1e0.chunk.css",
     "static/js/2.df8f0436.chunk.js": "/reviewed-in-anki/static/js/2.df8f0436.chunk.js",
     "static/js/2.df8f0436.chunk.js.map": "/reviewed-in-anki/static/js/2.df8f0436.chunk.js.map",
     "index.html": "/reviewed-in-anki/index.html",
-    "precache-manifest.4d11edf7c9de16039e460cfa45394b82.js": "/reviewed-in-anki/precache-manifest.4d11edf7c9de16039e460cfa45394b82.js",
+    "precache-manifest.0f4239bc3d5db704a118fd5e622eac4f.js": "/reviewed-in-anki/precache-manifest.0f4239bc3d5db704a118fd5e622eac4f.js",
     "service-worker.js": "/reviewed-in-anki/service-worker.js",
     "static/css/2.dbd8b1e0.chunk.css.map": "/reviewed-in-anki/static/css/2.dbd8b1e0.chunk.css.map",
     "static/css/main.5a47de1c.chunk.css.map": "/reviewed-in-anki/static/css/main.5a47de1c.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.dbd8b1e0.chunk.css",
     "static/js/2.df8f0436.chunk.js",
     "static/css/main.5a47de1c.chunk.css",
-    "static/js/main.049bdb8b.chunk.js"
+    "static/js/main.759f8682.chunk.js"
   ]
 }
