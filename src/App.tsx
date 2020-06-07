@@ -25,6 +25,7 @@ const shuffle = (mixMeUp: JSX.Element[]): JSX.Element[] => {
 const App = () => {
 	const indexedDb: ReviewedDb = new ReviewedDb();
 	const [panels, setPanels] = useState<JSX.Element[]>([]);
+	const ankiApiUrl = 'http://192.168.1.4:8765';
 
 	useEffect(() => {
 		const retrieveDataFromAnkiApi = async (numberOfItemsInIndexedDb: number): Promise<string[]> => {
@@ -37,7 +38,7 @@ const App = () => {
 					"query": "rated:7"
 				}
 			};
-			return await axios.post('api', cardsReviewedQuery).then(x => {
+			return await axios.post(ankiApiUrl, cardsReviewedQuery).then(x => {
 				if (numberOfItemsInIndexedDb > 0 && numberOfItemsInIndexedDb === x.data.result.length) {
 					console.log(`retrieveDataFromAnkiApi :: Exiting function :: Same records exist in IndexedDb`);
 					return ['same-records'];
@@ -68,7 +69,7 @@ const App = () => {
 					"notes": cardsReviewed.data.result
 				}
 			};
-			return await axios.post('/api', detailOfCardsReviewed).then(y => {
+			return await axios.post(ankiApiUrl, detailOfCardsReviewed).then(y => {
 				console.log(`processCardsReviewed :: Exiting function :: Proceed to processDetailedCardsReviewed`);
 				return processDetailedCardsReviewed(y, trends);
 			});
